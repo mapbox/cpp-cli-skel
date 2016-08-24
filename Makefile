@@ -15,7 +15,7 @@ $(MASON):
 	git submodule update --init
 
 mason_packages: $(MASON)
-	$(MASON) install hpp_skel 0.0.1 && $(MASON) link hpp_skel 0.0.1
+	$(MASON) install hpp_skel 0.0.1
 
 cli: mason_packages
-	$(CXX) cli.cpp -o cli -isystem$(MASON_HOME)/include -L$(MASON_HOME)/lib $(CXXFLAGS) $(FINAL_FLAGS) $(LDFLAGS);
+	# $(CXX) cli.cpp -o cli -isystem$(MASON_HOME)/include -L$(MASON_HOME)/lib $(CXXFLAGS) $(FINAL_FLAGS) $(LDFLAGS);
