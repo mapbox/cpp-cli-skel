@@ -1,1 +1,4 @@
 mason_packages
+cli
+cli.dSYM
+*.o
