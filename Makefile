@@ -19,7 +19,7 @@ endif
 default: cli
 
 cli: mason_packages clean
-	$(CXX) cli.cpp -o cli -isystem$(MASON_HOME)/include/include $(CXXFLAGS) $(FINAL_FLAGS) $(LDFLAGS)
+	$(CXX) cli.cpp -o cli -isystem$(MASON_HOME)/include $(CXXFLAGS) $(FINAL_FLAGS) $(LDFLAGS)
 
 test: cli
 	./tests/cli.test.sh
@@ -28,7 +28,7 @@ $(MASON):
 	git submodule update --init
 
 mason_packages: $(MASON)
-	$(MASON) install hpp_skel 0.0.1 && $(MASON) link hpp_skel 0.0.1
+	$(MASON) install hpp_skel 1.0.0 && $(MASON) link hpp_skel 1.0.0
 	$(MASON) install boost_libprogram_options 1.61.0 && $(MASON) link boost_libprogram_options 1.61.0
 
 clean:
